@@ -1,12 +1,13 @@
 import "./App.css";
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [gmail, setGmail] = useState("");
   const [password, setPassword] = useState("");
-
   console.log(gmail, password);
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const infor = {
@@ -60,7 +61,9 @@ function App() {
             onSubmit={handleSubmit}
             className="px-6 py-3 bg-[#3984ea] font-medium  cursor-pointer  rounded-lg text-white hover:opacity-60 transition-all"
           >
-            Đăng nhập
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSeMkuLOCgXXGta0zvmAWhQGNUo8koEAo2PnGv20m8JtLhBg/viewform?usp=sf_link">
+              Đăng nhập
+            </a>
           </button>
         </div>
       </section>
